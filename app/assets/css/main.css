@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+    /* Updated design tokens to match the creative studio design brief */
+    --background: #ffffff;
+    --foreground: #4b5563;
+    --card: #fffbeb;
+    --card-foreground: #374151;
+    --popover: #ffffff;
+    --popover-foreground: #374151;
+    --primary: #ea580c;
+    --primary-foreground: #ffffff;
+    --secondary: #f97316;
+    --secondary-foreground: #ffffff;
+    --muted: #fefce8;
+    --muted-foreground: #4b5563;
+    --accent: #f97316;
+    --accent-foreground: #ffffff;
+    --destructive: #dc2626;
+    --destructive-foreground: #ffffff;
+    --border: #e5e7eb;
+    --input: #ffffff;
+    --ring: rgba(234, 88, 12, 0.5);
+    --radius: 0.5rem;
+}
+
+@theme {
+    --color-pg-50: blue;
+}
+
+.dark {
+    --background: #1f2937;
+    --foreground: #f9fafb;
+    --card: #374151;
+    --card-foreground: #f9fafb;
+    --popover: #374151;
+    --popover-foreground: #f9fafb;
+    --primary: #f97316;
+    --primary-foreground: #ffffff;
+    --secondary: #ea580c;
+    --secondary-foreground: #ffffff;
+    --muted: #4b5563;
+    --muted-foreground: #d1d5db;
+    --accent: #ea580c;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #4b5563;
+    --input: #374151;
+    --ring: rgba(249, 115, 22, 0.5);
+}
+
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: content-box;
+    }
+}
