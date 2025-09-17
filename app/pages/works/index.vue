@@ -1,6 +1,6 @@
 <script setup>
-import { useHead } from '#app'
-import { computed, ref, watch } from 'vue'
+import { useHead } from '#app';
+import { computed, ref, watch } from 'vue';
 
 // SEO
 useHead({
@@ -11,72 +11,7 @@ useHead({
 })
 
 // Sample works data
-const allWorks = [
-  {
-    id: 1,
-    title: "Neon Dreams",
-    artist: "Sarah Chen",
-    type: "Music Video",
-    genre: "Pop/R&B",
-    year: "2024",
-    duration: "3:45",
-    thumbnail: "/placeholder.svg?height=300&width=400",
-    description: "A visually stunning music video that captures the essence of urban nightlife through neon-lit cinematography and dynamic choreography.",
-    credits: {
-      "Director": "Michael Johnson",
-      "Cinematographer": "Lisa Wang",
-      "Editor": "David Kim",
-      "Producer": "Studio Team"
-    }
-  },
-  {
-    id: 2,
-    title: "Studio Sessions",
-    artist: "Electric Horizon",
-    type: "Photography",
-    genre: "Electronic Rock",
-    year: "2023",
-    thumbnail: "/placeholder.svg?height=300&width=400",
-    description: "Intimate behind-the-scenes photography capturing the creative process and energy of Electric Horizon's recording sessions.",
-    credits: {
-      "Photographer": "Alex Rivera",
-      "Art Direction": "Emma Thompson",
-      "Post-Production": "Studio Team"
-    }
-  },
-  {
-    id: 3,
-    title: "Urban Beats",
-    artist: "Marcus Rodriguez",
-    type: "Music Video",
-    genre: "Hip-Hop/Rap",
-    year: "2024",
-    duration: "4:12",
-    thumbnail: "/placeholder.svg?height=300&width=400",
-    description: "A powerful music video showcasing urban culture and street art, featuring dynamic camera work and authentic locations.",
-    credits: {
-      "Director": "Jordan Smith",
-      "Cinematographer": "Taylor Kim",
-      "Editor": "Sam Rodriguez"
-    }
-  },
-  {
-    id: 4,
-    title: "Live at Sunset",
-    artist: "Midnight Collective",
-    type: "Video",
-    genre: "Jazz Fusion",
-    year: "2023",
-    duration: "45:30",
-    thumbnail: "/placeholder.svg?height=300&width=400",
-    description: "A full-length concert recording capturing the magic of Midnight Collective's live performance at the iconic Sunset Venue.",
-    credits: {
-      "Director": "Chris Lee",
-      "Audio Engineer": "Pat Wilson",
-      "Camera Operators": "Multiple"
-    }
-  }
-]
+const allWorks = WORKS;
 
 // Reactive state
 const selectedType = ref('all')
@@ -307,7 +242,7 @@ watch([selectedType, selectedGenre, searchQuery], () => {
                     <p class="mb-2">{{ work.artist }}</p>
                     <div class="flex items-center space-x-4 text-sm ">
                       <span class="text-primary px-2 py-1 rounded-full text-xs font-medium">{{ work.type
-                      }}</span>
+                        }}</span>
                       <span>{{ work.genre }}</span>
                       <span>{{ work.year }}</span>
                     </div>
@@ -351,7 +286,7 @@ watch([selectedType, selectedGenre, searchQuery], () => {
               <p class="text-xl text-accent mb-2">{{ selectedWork.artist }}</p>
               <div class="flex items-center space-x-4 text-sm ">
                 <span class="text-primary px-3 py-1 rounded-full font-medium">{{ selectedWork.type
-                }}</span>
+                  }}</span>
                 <span>{{ selectedWork.genre }}</span>
                 <span>{{ selectedWork.year }}</span>
                 <span v-if="selectedWork.duration">{{ selectedWork.duration }}</span>

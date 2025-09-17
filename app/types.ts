@@ -13,10 +13,23 @@ export type Band = {
     genre: string;
     description: string;
     members: number;
-    formed: string;
     image: string;
     social: Socials;
 };
+
 export type Artist = {
-    [k in Exclude<keyof Band, "formed" | "genre" | "members">]: Band[k];
+    [k in Exclude<keyof Band, "genre" | "members">]: Band[k];
+};
+
+export type Works = {
+    id: number;
+    title: string;
+    genre?: string;
+    year?: string;
+    duration?: string;
+    artist: string;
+    type: string;
+    thumbnail: string;
+    description: string;
+    credits: Record<string, string>;
 };

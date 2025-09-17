@@ -3,48 +3,7 @@ import { navigateTo } from '#app';
 import { computed, ref } from 'vue';
 
 // Sample bands data
-const bands = [
-  {
-    id: 1,
-    name: "Electric Horizon",
-    genre: "Electronic Rock",
-    description: "Fusion of electronic beats with rock instrumentation, creating an energetic and modern sound.",
-    members: 4,
-    formed: "2019",
-    image: "/placeholder.svg?height=300&width=500",
-    social: { instagram: true, spotify: true }
-  },
-  {
-    id: 2,
-    name: "Midnight Collective",
-    genre: "Jazz Fusion",
-    description: "Contemporary jazz ensemble blending traditional jazz with modern influences and improvisation.",
-    members: 5,
-    formed: "2021",
-    image: "/placeholder.svg?height=300&width=500",
-    social: { instagram: true, spotify: true }
-  },
-  {
-    id: 3,
-    name: "Neon Pulse",
-    genre: "Synthwave",
-    description: "Retro-futuristic electronic music with nostalgic 80s vibes and modern production.",
-    members: 3,
-    formed: "2020",
-    image: "/placeholder.svg?height=300&width=500",
-    social: { instagram: true, spotify: false }
-  },
-  {
-    id: 4,
-    name: "Urban Roots",
-    genre: "Hip-Hop",
-    description: "Conscious hip-hop collective addressing social issues through powerful lyrics and beats.",
-    members: 6,
-    formed: "2018",
-    image: "/placeholder.svg?height=300&width=500",
-    social: { instagram: true, spotify: true }
-  }
-];
+const bands = BANDS;
 
 const selectedBand = ref('all');
 const genres = ['Electronic Rock', 'Jazz Fusion', 'Synthwave', 'Hip-Hop'];

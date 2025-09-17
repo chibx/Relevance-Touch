@@ -1,64 +1,10 @@
 <script setup>
 import { navigateTo, useHead } from '#app';
 import { computed, ref } from 'vue';
+import { ARTISTS } from '~/utils/data';
 
 // Sample artists data
-const allArtists = [
-  {
-    id: 1,
-    name: "Sarah Chen",
-    genre: "Pop/R&B",
-    experience: "8 years",
-    location: "Los Angeles, CA",
-    image: "/placeholder.svg?height=400&width=400",
-    description: "Multi-platinum recording artist with a soulful voice and contemporary style that has captivated audiences worldwide."
-  },
-  {
-    id: 2,
-    name: "Marcus Rodriguez",
-    genre: "Hip-Hop/Rap",
-    experience: "6 years",
-    location: "Atlanta, GA",
-    image: "/placeholder.svg?height=400&width=400",
-    description: "Award-winning rapper and producer known for innovative beats and socially conscious lyrics."
-  },
-  {
-    id: 3,
-    name: "Luna Park",
-    genre: "Indie/Alternative",
-    experience: "5 years",
-    location: "Portland, OR",
-    image: "/placeholder.svg?height=400&width=400",
-    description: "Singer-songwriter creating atmospheric indie music with electronic elements and introspective lyrics."
-  },
-  {
-    id: 4,
-    name: "Alex Rivera",
-    genre: "Electronic",
-    experience: "7 years",
-    location: "Miami, FL",
-    image: "/placeholder.svg?height=400&width=400",
-    description: "Electronic music producer and DJ specializing in progressive house and ambient soundscapes."
-  },
-  {
-    id: 5,
-    name: "Emma Thompson",
-    genre: "Folk",
-    experience: "4 years",
-    location: "Nashville, TN",
-    image: "/placeholder.svg?height=400&width=400",
-    description: "Folk singer-songwriter with a powerful voice and storytelling ability rooted in traditional American music."
-  },
-  {
-    id: 6,
-    name: "Jordan Kim",
-    genre: "Jazz",
-    experience: "10 years",
-    location: "New York, NY",
-    image: "/placeholder.svg?height=400&width=400",
-    description: "Accomplished jazz pianist and composer known for innovative arrangements and collaborative performances."
-  }
-];
+const allArtists = ARTISTS;
 
 // Reactive state
 const selectedGenre = ref('all');

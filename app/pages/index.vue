@@ -2,95 +2,11 @@
 import { useHead } from '#app';
 
 // Sample data
-const featuredArtists = [
-  {
-    id: 1,
-    name: "Sarah Chen",
-    genre: "Pop/R&B",
-    description: "Multi-platinum recording artist with a soulful voice and contemporary style.",
-    image: "/placeholder.svg?height=400&width=400"
-  },
-  {
-    id: 2,
-    name: "Marcus Rodriguez",
-    genre: "Hip-Hop/Rap",
-    description: "Award-winning rapper and producer known for innovative beats and lyrics.",
-    image: "/placeholder.svg?height=400&width=400"
-  },
-  {
-    id: 3,
-    name: "Luna Park",
-    genre: "Indie/Alternative",
-    description: "Singer-songwriter creating atmospheric indie music with electronic elements.",
-    image: "/placeholder.svg?height=400&width=400"
-  }
-];
+const featuredArtists = populateRandom(ARTISTS, 3)
 
-const featuredBands = [
-  {
-    id: 1,
-    name: "Electric Horizon",
-    genre: "Electronic Rock",
-    description: "Fusion of electronic beats with rock instrumentation, creating an energetic and modern sound.",
-    members: 4,
-    formed: "2019",
-    image: "/placeholder.svg?height=300&width=500"
-  },
-  {
-    id: 2,
-    name: "Midnight Collective",
-    genre: "Jazz Fusion",
-    description: "Contemporary jazz ensemble blending traditional jazz with modern influences and improvisation.",
-    members: 5,
-    formed: "2021",
-    image: "/placeholder.svg?height=300&width=500"
-  }
-];
+const featuredBands = populateRandom(BANDS, 2);
 
-const latestWorks = [
-  {
-    id: 1,
-    title: "Neon Dreams",
-    artist: "Sarah Chen",
-    type: "Music Video",
-    thumbnail: "/placeholder.svg?height=300&width=400"
-  },
-  {
-    id: 2,
-    title: "Studio Sessions",
-    artist: "Electric Horizon",
-    type: "Photography",
-    thumbnail: "/placeholder.svg?height=300&width=400"
-  },
-  {
-    id: 3,
-    title: "Urban Beats",
-    artist: "Marcus Rodriguez",
-    type: "Music Video",
-    thumbnail: "/placeholder.svg?height=300&width=400"
-  },
-  {
-    id: 4,
-    title: "Live at Sunset",
-    artist: "Midnight Collective",
-    type: "Video",
-    thumbnail: "/placeholder.svg?height=300&width=400"
-  },
-  {
-    id: 5,
-    title: "Portrait Series",
-    artist: "Luna Park",
-    type: "Photography",
-    thumbnail: "/placeholder.svg?height=300&width=400"
-  },
-  {
-    id: 6,
-    title: "Behind the Scenes",
-    artist: "Various Artists",
-    type: "Documentary",
-    thumbnail: "/placeholder.svg?height=300&width=400"
-  }
-];
+const latestWorks = populateRandom(WORKS, 4);
 
 // SEO
 useHead({
@@ -108,7 +24,8 @@ useHead({
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
-        <img src="/placeholder.svg?height=1080&width=1920" alt="Studio background" class="w-full h-full object-cover" />
+        <!-- <img src="/placeholder.svg?height=1080&width=1920" alt="Studio background" class="w-full h-full object-cover" /> -->
+        <img src="/studio.webp" alt="Studio background" class="w-full h-full object-cover" />
         <div class="absolute inset-0 bg-black/40"></div>
       </div>
 
@@ -121,11 +38,12 @@ useHead({
           Professional creative studio showcasing world-class artists, bands, and multimedia productions
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <NuxtLink to="/works" class="px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+          <NuxtLink to="/works"
+            class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-full text-lg font-semibold transition-colors">
             View Our Works
           </NuxtLink>
           <NuxtLink to="/artists"
-            class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-lg text-lg font-semibold transition-colors backdrop-blur-sm">
+            class="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-8 py-4 rounded-full text-lg font-semibold transition-colors backdrop-blur-sm">
             Meet Our Artists
           </NuxtLink>
         </div>
@@ -151,7 +69,7 @@ useHead({
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               </div>
               <div class="p-6">
-                <h3 class="text-xl font-semibold mb-2">{{ artist.name }}</h3>
+                <h3 class="text-xl font-semibold mb-1">{{ artist.name }}</h3>
                 <p class="mb-3">{{ artist.genre }}</p>
                 <p class="text-sm ">{{ artist.description }}</p>
               </div>
@@ -160,7 +78,8 @@ useHead({
         </div>
 
         <div class="text-center mt-12">
-          <NuxtLink to="/artists" class="px-8 py-3 rounded-lg font-semibold transition-colors">
+          <NuxtLink to="/artists"
+            class="bg-white text-black shadow-lg shadow-black/30 hover:shadow-md transition-shadow rounded-xl px-8 py-5 font-semibold">
             View All Artists
           </NuxtLink>
         </div>
@@ -200,7 +119,8 @@ useHead({
         </div>
 
         <div class="text-center mt-12">
-          <NuxtLink to="/bands" class="px-8 py-3 rounded-lg font-semibold transition-colors">
+          <NuxtLink to="/bands"
+            class="bg-white text-black shadow-lg shadow-black/30 hover:shadow-md transition-shadow  px-8 py-5 rounded-xl font-semibold">
             View All Bands
           </NuxtLink>
         </div>
@@ -237,7 +157,8 @@ useHead({
         </div>
 
         <div class="text-center mt-12">
-          <NuxtLink to="/works" class="px-8 py-3 rounded-lg font-semibold transition-colors">
+          <NuxtLink to="/works"
+            class="bg-white text-black shadow-lg shadow-black/30 hover:shadow-md transition-shadow  px-8 py-5 rounded-xl font-semibold">
             View All Works
           </NuxtLink>
         </div>
@@ -254,7 +175,7 @@ useHead({
           Join our community of talented artists and bring your creative vision to life
         </p>
         <NuxtLink to="/about"
-          class="bg-white hover:bg-white/90 text-primary px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+          class="border hover:bg-black hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors duration-300">
           Get In Touch
         </NuxtLink>
       </div>
