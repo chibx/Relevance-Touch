@@ -4,7 +4,7 @@ const mobileMenuOpen = ref(false);
 </script>
 
 <template>
-  <div class="min-h-screen bg-background">
+  <div class="min-h-screen overflow-hidden">
     <!-- Navigation -->
     <nav class="bg-white/95 backdrop-blur-sm border-b sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +57,7 @@ const mobileMenuOpen = ref(false);
     </main>
 
     <!-- Footer -->
-    <footer class="bg-muted border-t ">
+    <footer class="bg-muted border-t">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="col-span-1 md:col-span-2">
@@ -75,11 +75,11 @@ const mobileMenuOpen = ref(false);
           <div>
             <h3 class="font-semibold mb-4">Quick Links</h3>
             <div class="space-y-2">
-              <NuxtLink to="/artists" class="block transition-colors">Artists
+              <NuxtLink to="/artists" class="block hover:underline underline-offset-4 transition-colors">Artists
               </NuxtLink>
-              <NuxtLink to="/bands" class="block transition-colors">Bands
+              <NuxtLink to="/bands" class="block hover:underline underline-offset-4 transition-colors">Bands
               </NuxtLink>
-              <NuxtLink to="/works" class="block transition-colors">Works
+              <NuxtLink to="/works" class="block hover:underline underline-offset-4 transition-colors">Works
               </NuxtLink>
             </div>
           </div>
@@ -100,3 +100,10 @@ const mobileMenuOpen = ref(false);
     </footer>
   </div>
 </template>
+
+
+<style scoped>
+footer {
+  background-color: #f7f4f4;
+}
+</style>
