@@ -10,17 +10,18 @@ export type Socials = {
 };
 
 export type Artist = {
-  [k in Exclude<keyof Band, "members">]: Band[k];
+  [k in Exclude<
+    keyof Band,
+    "members" | "bandMember" | "discography" | "formed"
+  >]: Band[k];
 } & {
   experience: string;
   location: string;
-  heroImage: string;
-  bio: string;
   journey: string;
   achievements: string[];
 };
 
-export type ArtisWork = {
+export type ArtistWork = {
   id: number;
   title: string;
   type: string;
@@ -53,7 +54,7 @@ export type Band = {
   formed: string;
   location: string;
   bandMember: BandMember[];
-  social: Socials;
+  socials: Socials;
   discography: Discography[];
 };
 

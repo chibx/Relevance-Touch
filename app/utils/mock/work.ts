@@ -1,4 +1,4 @@
-import type { ArtisWork, Works } from "~/types";
+import type { ArtistWork, Works } from "~/types";
 
 export const WORKS: Works[] = [
   {
@@ -99,7 +99,7 @@ export const WORKS: Works[] = [
   },
 ];
 
-export const artistWorks: Record<number, ArtisWork[]> = {
+export const artistWorks: Record<number, ArtistWork[]> = {
   1: [
     {
       id: 1,

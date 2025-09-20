@@ -1,4 +1,5 @@
-import type { Socials } from "~/types";
+import type { Socials, ArtistWork } from "~/types";
+import { artistWorks } from "./mock/work";
 
 /** [url, iconName, normalClass, hoverClass] */
 type CompactSocialInfo = readonly [string, string, string];
@@ -27,4 +28,8 @@ export function populateRandom<T>(arr: T[], num = 1) {
   }
 
   return res;
+}
+
+export function getArtistWork(id: number) {
+  return artistWorks[id];
 }

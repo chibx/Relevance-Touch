@@ -72,6 +72,7 @@ export const ARTISTS_DATA: Record<number, Artist> = {
     location: "Los Angeles, CA",
     image: "/artists/artist_1.jpg",
     heroImage: "/placeholder.svg?height=500&width=1200",
+    description: "Gospel singer and producer known for spirit filled songs.",
     bio: "Sarah Chen is a multi-platinum recording artist whose soulful voice and contemporary style have captivated audiences worldwide. With over 8 years in the industry, she has established herself as one of the most versatile and dynamic performers of her generation.",
     journey:
       "Starting her career as a backup vocalist, Sarah quickly rose through the ranks with her powerful voice and magnetic stage presence. Her debut album 'Midnight Dreams' topped the charts and earned her multiple Grammy nominations, setting the stage for a remarkable career that continues to evolve.",
@@ -82,7 +83,7 @@ export const ARTISTS_DATA: Record<number, Artist> = {
       "Over 50 million streams worldwide",
       "Headlined major festivals including Coachella and Lollapalooza",
     ],
-    social: {
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       spotify: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
     },
@@ -107,7 +108,7 @@ export const ARTISTS_DATA: Record<number, Artist> = {
       "Collaborated with top artists including Kendrick Lamar and J. Cole",
       "Sold-out national tour in 2024",
     ],
-    social: {
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       spotify: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
     },
@@ -132,7 +133,7 @@ export const ARTISTS_DATA: Record<number, Artist> = {
       "Featured on major Spotify playlists including 'Fresh Finds' and 'Indie Folk'",
       "Viral hit single 'Golden Haze' with over 10 million streams",
     ],
-    social: {
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       spotify: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       youtube: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
@@ -158,7 +159,7 @@ export const ARTISTS_DATA: Record<number, Artist> = {
       "His track 'Ethereal' topped the Beatport charts for six consecutive weeks",
       "Launched his own record label, 'Aether Sounds'",
     ],
-    social: {
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       soundcloud: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
     },
@@ -183,7 +184,7 @@ export const ARTISTS_DATA: Record<number, Artist> = {
       "Performed at the Grand Ole Opry",
       "Her song 'River's End' was featured in a major film soundtrack",
     ],
-    social: {
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       spotify: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       facebook: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
@@ -209,7 +210,7 @@ export const ARTISTS_DATA: Record<number, Artist> = {
       "Held a residency at the iconic Village Vanguard",
       "His latest album 'Kinetic' was named 'Jazz Album of the Year' by Jazz Times",
     ],
-    social: {
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       spotify: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       youtube: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
