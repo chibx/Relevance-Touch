@@ -35,7 +35,9 @@
                     height="500"
                     width="500"
                 />
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-xl flex items-center justify-center">
+                <div
+                    class="text-white absolute -bottom-6 -right-6 w-32 h-32 rounded-xl flex items-center justify-center"
+                >
                     <div class="poppins text-center">
                         <div class="text-2xl font-bold">6+</div>
                         <div class="text-sm">Years</div>
