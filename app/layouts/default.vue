@@ -29,7 +29,21 @@ const mobileMenuOpen = ref(false);
 
                         <!-- Mobile menu button -->
                         <button @click="mobileMenuOpen = !mobileMenuOpen" class="cursor-pointer md:hidden p-2">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg
+                                v-if="mobileMenuOpen"
+                                class="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"
+                                ></path>
+                            </svg>
+                            <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
@@ -102,5 +116,26 @@ const mobileMenuOpen = ref(false);
 <style scoped>
 footer {
     background-color: #f7f4f4;
+}
+
+.top-line,
+.middle-line,
+.bottom-line {
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+    transform-origin: center; /* Important for rotation */
+}
+
+.svg.is-active .top-line {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.svg.is-active .middle-line {
+    opacity: 0;
+}
+
+.svg.is-active .bottom-line {
+    transform: translateY(-6px) rotate(-45deg);
 }
 </style>
