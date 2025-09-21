@@ -40,7 +40,7 @@ useHead({
                 </div>
             </section>
 
-            <section class="py-16">
+            <section class="pt-16">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                         <div class="lg:col-span-2">
@@ -65,7 +65,7 @@ useHead({
                         </div>
 
                         <div class="lg:col-span-1">
-                            <div class="bg-card rounded-xl p-6 mb-8">
+                            <div class="bg-card rounded-xl p-4 mb-4">
                                 <img
                                     :src="artist.image"
                                     :alt="artist.name"
@@ -73,7 +73,7 @@ useHead({
                                 />
 
                                 <div class="space-y-4">
-                                    <div class="space-y-4 flex lg:block flex-wrap gap-x-10 justify-center">
+                                    <div class="space-y-4">
                                         <div>
                                             <h4 class="font-semibold mb-2">Genre</h4>
                                             <p>{{ artist.genre }}</p>
@@ -90,9 +90,9 @@ useHead({
                                         </div>
                                     </div>
 
-                                    <div class="flex lg:block flex-col items-center">
+                                    <div class="">
                                         <h4 class="font-semibold mb-2">Follow</h4>
-                                        <ArtistSocials :socials="artist.socials" />
+                                        <Socials :socials="artist.socials" />
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@ useHead({
                 </div>
             </section>
 
-            <section class="py-16 bg-muted">
+            <section class="py-5">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 class="text-3xl font-bold mb-8">Featured Works</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

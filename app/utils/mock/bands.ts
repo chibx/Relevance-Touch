@@ -1,4 +1,6 @@
-export const BAND_DATA = {
+import type { Band } from "~/types";
+
+export const BAND_DATA: Record<number, Band> = {
   1: {
     id: 1,
     name: "Electric Horizon",
@@ -8,30 +10,30 @@ export const BAND_DATA = {
     image: "/bands/band_1.jpg",
     location: "New York, NY",
     heroImage: "/bands/band_1.jpg",
-    bio: "Electric Horizon represents the cutting edge of electronic rock, seamlessly blending synthesized beats with traditional rock instrumentation. Formed in 2019, the band has quickly established themselves as pioneers in the genre, creating an energetic and modern sound that resonates with audiences worldwide.",
-    social: {
+    bio: "Electric Horizon represents the cutting edge of electronic rock, seamlessly blending synthesized beats with traditional rock roleation. Formed in 2019, the band has quickly established themselves as pioneers in the genre, creating an energetic and modern sound that resonates with audiences worldwide.",
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       spotify: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
     },
     bandMembers: [
       {
         name: "Alex Chen",
-        instrument: "Lead Vocals, Synth",
+        role: "Lead Vocals, Synth",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Jordan Smith",
-        instrument: "Guitar, Backing Vocals",
+        role: "Guitar, Backing Vocals",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Sam Rodriguez",
-        instrument: "Bass, Electronics",
+        role: "Bass, Electronics",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Taylor Kim",
-        instrument: "Drums, Percussion",
+        role: "Drums, Percussion",
         image: "/placeholder.svg?height=100&width=100",
       },
     ],
@@ -51,34 +53,34 @@ export const BAND_DATA = {
     location: "Los Angeles, CA",
     heroImage: "/bands/band_2.jpg",
     bio: "Midnight Collective is a contemporary jazz ensemble that skillfully blends traditional jazz with modern influences and improvisation. Their sound is both sophisticated and accessible, creating an immersive experience for listeners with intricate arrangements and dynamic performances.",
-    social: {
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       spotify: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
     },
     bandMembers: [
       {
         name: "Maya Singh",
-        instrument: "Saxophone, Clarinet",
+        role: "Saxophone, Clarinet",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Leo Cruz",
-        instrument: "Trumpet, Flugelhorn",
+        role: "Trumpet, Flugelhorn",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Noah Carter",
-        instrument: "Piano, Keys",
+        role: "Piano, Keys",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Chloe Davis",
-        instrument: "Upright Bass",
+        role: "Upright Bass",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Ethan White",
-        instrument: "Drums, Percussion",
+        role: "Drums, Percussion",
         image: "/placeholder.svg?height=100&width=100",
       },
     ],
@@ -98,24 +100,24 @@ export const BAND_DATA = {
     location: "Austin, TX",
     heroImage: "/bands/band_3.jpg",
     bio: "Neon Pulse is a retro-futuristic electronic music trio, known for their nostalgic 80s vibes and modern production. Their sound transports listeners to a different era, evoking images of late-night drives and neon-lit cityscapes with shimmering synthesizers and driving rhythms.",
-    social: {
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       spotify: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
     },
     bandMembers: [
       {
         name: "Lucas Gray",
-        instrument: "Synthesizer, Production",
+        role: "Synthesizer, Production",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Mia Santos",
-        instrument: "Vocals",
+        role: "Vocals",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Aaron Lee",
-        instrument: "Guitar, Synth",
+        role: "Guitar, Synth",
         image: "/placeholder.svg?height=100&width=100",
       },
     ],
@@ -135,39 +137,39 @@ export const BAND_DATA = {
     location: "Chicago, IL",
     heroImage: "/bands/band_4.jpg",
     bio: "Urban Roots is a conscious hip-hop collective dedicated to addressing social issues through powerful lyrics and beats. Since forming in 2018, the group has become a voice for their community, using their music to inspire change and tell authentic stories with a blend of classic and contemporary hip-hop.",
-    social: {
+    socials: {
       instagram: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
       spotify: "https://open.spotify.com/artist/76D34AFU39hprElLWR448w",
     },
     bandMembers: [
       {
         name: "Jasmine Reed",
-        instrument: "Lead Vocals, Rapper",
+        role: "Lead Vocals, Rapper",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Kevin Miller",
-        instrument: "Drums, Percussion",
+        role: "Drums, Percussion",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "David Chen",
-        instrument: "DJ, Turntables",
+        role: "DJ, Turntables",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Sarah Kim",
-        instrument: "Bass",
+        role: "Bass",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Michael O'Connell",
-        instrument: "Guitar",
+        role: "Guitar",
         image: "/placeholder.svg?height=100&width=100",
       },
       {
         name: "Olivia Rodriguez",
-        instrument: "Backing Vocals",
+        role: "Backing Vocals",
         image: "/placeholder.svg?height=100&width=100",
       },
     ],
