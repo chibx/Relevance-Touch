@@ -29,9 +29,7 @@ const itemsPerPage = 12;
 const selectedWork = ref(null);
 
 // Computed properties
-const workTypes = computed(() => [
-    ...new Set(allWorks.map((work) => work.type)),
-]);
+const workTypes = computed(() => [...new Set(allWorks.map((work) => work.type))]);
 const genres = computed(() => [...new Set(allWorks.map((work) => work.genre))]);
 
 const filteredWorks = computed(() => {
@@ -42,9 +40,7 @@ const filteredWorks = computed(() => {
     }
 
     if (selectedGenre.value !== "all") {
-        filtered = filtered.filter(
-            (work) => work.genre === selectedGenre.value,
-        );
+        filtered = filtered.filter((work) => work.genre === selectedGenre.value);
     }
 
     // if (searchQuery.value) {
@@ -75,9 +71,7 @@ const filteredWorks = computed(() => {
     return filtered;
 });
 
-const totalPages = computed(() =>
-    Math.ceil(filteredWorks.value.length / itemsPerPage),
-);
+const totalPages = computed(() => Math.ceil(filteredWorks.value.length / itemsPerPage));
 
 const paginatedWorks = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage;
@@ -124,10 +118,8 @@ const [viewParent] = useAutoAnimate();
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Works</h1>
                 <p class="text-xl max-w-3xl mx-auto">
-                    Explore our comprehensive portfolio of video productions,
-                    photography, and multimedia projects. Each piece represents
-                    our commitment to creative excellence and artistic
-                    innovation.
+                    Explore our comprehensive portfolio of video productions, photography, and multimedia projects. Each
+                    piece represents our commitment to creative excellence and artistic innovation.
                 </p>
             </div>
         </section>
@@ -138,14 +130,12 @@ const [viewParent] = useAutoAnimate();
                 <!-- Type Filters -->
                 <div class="mb-6">
                     <h3 class="text-lg font-semibold mb-4">Filter by Type</h3>
-                    <div class="w-full flex gap-3 overflow-auto">
+                    <div class="w-full flex flex-wrap gap-3 justify-center">
                         <button
                             @click="selectedType = 'all'"
                             :class="[
-                                'whitespace-nowrap cursor-pointer px-4 py-2.5 rounded-full font-medium transition-colors duration-200',
-                                selectedType === 'all'
-                                    ? 'bg-black text-white'
-                                    : '',
+                                'cursor-pointer px-4 py-2.5 rounded-full font-medium transition-colors duration-200',
+                                selectedType === 'all' ? 'bg-black text-white' : '',
                             ]"
                         >
                             All Works
@@ -155,10 +145,8 @@ const [viewParent] = useAutoAnimate();
                             :key="type"
                             @click="selectedType = type"
                             :class="[
-                                'whitespace-nowrap cursor-pointer px-5 py-2.5 rounded-full font-medium transition-colors duration-200',
-                                selectedType === type
-                                    ? 'bg-black text-white'
-                                    : '',
+                                'cursor-pointer px-5 py-2.5 rounded-full font-medium transition-colors duration-200',
+                                selectedType === type ? 'bg-black text-white' : '',
                             ]"
                         >
                             {{ type }}
@@ -167,9 +155,7 @@ const [viewParent] = useAutoAnimate();
                 </div>
 
                 <!-- Search and Sort -->
-                <div
-                    class="flex flex-col md:flex-row gap-4 items-center justify-end"
-                >
+                <div class="flex flex-col md:flex-row gap-4 items-center justify-end">
                     <!-- Search Query -->
                     <!-- <div class="relative flex-1 max-w-md">
                         <input
@@ -193,7 +179,7 @@ const [viewParent] = useAutoAnimate();
                         </svg>
                     </div> -->
 
-                    <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-4 gap-2.5">
                         <select
                             v-model="sortBy"
                             class="px-4 py-2 border border-b rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
@@ -204,24 +190,15 @@ const [viewParent] = useAutoAnimate();
                             <option value="artist">Artist A-Z</option>
                         </select>
 
-                        <div
-                            class="flex border border-b rounded-lg overflow-hidden"
-                        >
+                        <div class="flex border border-b rounded-lg overflow-hidden">
                             <button
                                 @click="viewMode = 'grid'"
                                 :class="[
                                     'cursor-pointer p-2 transition-colors',
-                                    viewMode === 'grid'
-                                        ? 'bg-black text-white'
-                                        : '',
+                                    viewMode === 'grid' ? 'bg-black text-white' : '',
                                 ]"
                             >
-                                <svg
-                                    class="w-5 h-5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
                                         stroke-linecap="round"
                                         stroke-linejoin="round"
@@ -234,17 +211,10 @@ const [viewParent] = useAutoAnimate();
                                 @click="viewMode = 'list'"
                                 :class="[
                                     'cursor-pointer p-2 transition-colors',
-                                    viewMode === 'list'
-                                        ? 'bg-black text-white'
-                                        : '',
+                                    viewMode === 'list' ? 'bg-black text-white' : '',
                                 ]"
                             >
-                                <svg
-                                    class="w-5 h-5"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
                                         stroke-linecap="round"
                                         stroke-linejoin="round"
@@ -267,10 +237,7 @@ const [viewParent] = useAutoAnimate();
 
         <!-- Works Gallery -->
         <section class="py-16">
-            <div
-                ref="viewParent"
-                class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-            >
+            <div ref="viewParent" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Grid View -->
                 <div
                     ref="itemParent"
@@ -309,9 +276,7 @@ const [viewParent] = useAutoAnimate();
                                 class="absolute flex items-end justify-between bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
                             >
                                 <div>
-                                    <h3
-                                        class="text-white font-semibold mb-1 text-sm"
-                                    >
+                                    <h3 class="text-white font-semibold mb-1 text-sm">
                                         {{ work.title }}
                                     </h3>
                                     <p class="text-white/80 text-xs">
@@ -322,9 +287,7 @@ const [viewParent] = useAutoAnimate();
                                     </p>
                                 </div>
 
-                                <span
-                                    class="px-2 py-1 text-white rounded-full text-sm font-medium"
-                                >
+                                <span class="px-2 py-1 text-white rounded-full text-sm font-medium">
                                     {{ work.type }}
                                 </span>
                             </div>
@@ -341,14 +304,8 @@ const [viewParent] = useAutoAnimate();
                         @click="openWorkModal(work)"
                     >
                         <div class="flex items-center space-x-6">
-                            <div
-                                class="relative w-32 h-20 rounded-lg overflow-hidden flex-shrink-0"
-                            >
-                                <img
-                                    :src="work.thumbnail"
-                                    :alt="work.title"
-                                    class="w-full h-full object-cover"
-                                />
+                            <div class="relative w-32 h-20 rounded-lg overflow-hidden flex-shrink-0">
+                                <img :src="work.thumbnail" :alt="work.title" class="w-full h-full object-cover" />
                             </div>
 
                             <div class="flex-1 min-w-0">
@@ -358,13 +315,10 @@ const [viewParent] = useAutoAnimate();
                                             {{ work.title }}
                                         </h3>
                                         <p class="mb-2">{{ work.artist }}</p>
-                                        <div
-                                            class="flex items-center space-x-4 text-sm"
-                                        >
-                                            <span
-                                                class="text-primary px-2 py-1 rounded-full text-xs font-medium"
-                                                >{{ work.type }}</span
-                                            >
+                                        <div class="flex items-center space-x-4 text-sm">
+                                            <span class="text-primary px-2 py-1 rounded-full text-xs font-medium">{{
+                                                work.type
+                                            }}</span>
                                             <span>{{ work.genre }}</span>
                                             <span>{{ work.year }}</span>
                                         </div>
@@ -381,10 +335,7 @@ const [viewParent] = useAutoAnimate();
                 </div>
 
                 <!-- No Results -->
-                <div
-                    v-if="filteredWorks.length === 0"
-                    class="text-center py-16"
-                >
+                <div v-if="filteredWorks.length === 0" class="text-center py-16">
                     <h3 class="text-xl font-semibold mb-2">No works found</h3>
                     <p>Try adjusting your filters or search terms.</p>
                 </div>
@@ -397,10 +348,7 @@ const [viewParent] = useAutoAnimate();
             class="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4"
             @click="closeWorkModal"
         >
-            <div
-                class="bg-card rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-                @click.stop
-            >
+            <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" @click.stop>
                 <div class="relative">
                     <img
                         :src="selectedWork.thumbnail"
@@ -411,12 +359,7 @@ const [viewParent] = useAutoAnimate();
                         @click="closeWorkModal"
                         class="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors"
                     >
-                        <svg
-                            class="w-6 h-6"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                        >
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
@@ -437,15 +380,12 @@ const [viewParent] = useAutoAnimate();
                                 {{ selectedWork.artist }}
                             </p>
                             <div class="flex items-center space-x-4 text-sm">
-                                <span
-                                    class="text-primary px-3 py-1 rounded-full font-medium"
-                                    >{{ selectedWork.type }}</span
-                                >
+                                <span class="text-primary px-3 py-1 rounded-full font-medium">{{
+                                    selectedWork.type
+                                }}</span>
                                 <span>{{ selectedWork.genre }}</span>
                                 <span>{{ selectedWork.year }}</span>
-                                <span v-if="selectedWork.duration">{{
-                                    selectedWork.duration
-                                }}</span>
+                                <span v-if="selectedWork.duration">{{ selectedWork.duration }}</span>
                             </div>
                         </div>
                     </div>
@@ -459,10 +399,7 @@ const [viewParent] = useAutoAnimate();
                     <div v-if="selectedWork.credits" class="mt-8">
                         <h3 class="text-xl font-semibold mb-4">Credits</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div
-                                v-for="(credit, role) in selectedWork.credits"
-                                :key="role"
-                            >
+                            <div v-for="(credit, role) in selectedWork.credits" :key="role">
                                 <h4 class="font-medium">{{ role }}</h4>
                                 <p>{{ credit }}</p>
                             </div>
