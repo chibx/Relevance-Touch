@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { animate } from "motion/mini";
+
 const props = defineProps<{
     isOpen: boolean;
 }>();
@@ -13,12 +15,19 @@ const routeMap: [string, string][] = [
 ];
 
 const links = useTemplateRef("links");
+const menu = useTemplateRef("menu");
 
 watch(
     () => props.isOpen,
     () => {
+        const elements = unref(links);
+        const menuEl = unref(menu);
+        if (elements === null || menuEl === null) return;
+
         if (props.isOpen) {
+            animate(menuEl, { height: [0, height] });
         } else {
+            animate(menuEl, { height: 0 });
         }
     },
 );
@@ -30,8 +39,9 @@ function closeMenu() {}
 <template>
     <div
         v-if="isOpen"
+        ref="menu"
         class="fixed w-full top-[64px] md:hidden py-4 border-t bg-white"
-        :style="{ height: `${height}px` }"
+        :style="{ height: `${0}px` }"
     >
         <div class="flex flex-col space-y-2">
             <NuxtLink
