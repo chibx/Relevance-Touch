@@ -23,17 +23,13 @@ const selectedGenre = ref("all");
 const searchQuery = ref("");
 
 // Computed properties
-const genres = computed(() => [
-    ...new Set(allArtists.map((artist) => artist.genre)),
-]);
+const genres = computed(() => [...new Set(allArtists.map((artist) => artist.genre))]);
 
 const filteredArtists = computed(() => {
     let filtered = allArtists;
 
     if (selectedGenre.value !== "all") {
-        filtered = filtered.filter(
-            (artist) => artist.genre === selectedGenre.value,
-        );
+        filtered = filtered.filter((artist) => artist.genre === selectedGenre.value);
     }
 
     if (searchQuery.value) {
@@ -64,9 +60,8 @@ const [parent] = useAutoAnimate();
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Artists</h1>
                 <p class="text-xl max-w-3xl mx-auto">
-                    Meet the talented individuals who bring our creative vision
-                    to life. Each artist brings their unique style and
-                    perspective to create extraordinary musical experiences.
+                    Meet the talented individuals who bring our creative vision to life. Each artist brings their unique
+                    style and perspective to create extraordinary musical experiences.
                 </p>
             </div>
         </section>
@@ -74,18 +69,14 @@ const [parent] = useAutoAnimate();
         <!-- Filters Section -->
         <section class="py-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div
-                    class="flex flex-col md:flex-row gap-6 items-center justify-center"
-                >
+                <div class="flex flex-col md:flex-row gap-6 items-center justify-center">
                     <!-- Genre Filter -->
                     <div class="flex flex-wrap gap-3">
                         <button
                             @click="selectedGenre = 'all'"
                             :class="[
                                 'px-4 py-2 cursor-pointer rounded-full font-medium transition-colors duration-200',
-                                selectedGenre === 'all'
-                                    ? 'bg-black text-white'
-                                    : '',
+                                selectedGenre === 'all' ? 'bg-black text-white' : '',
                             ]"
                         >
                             All Genres
@@ -96,9 +87,7 @@ const [parent] = useAutoAnimate();
                             @click="selectedGenre = genre"
                             :class="[
                                 'px-4 py-2 cursor-pointer rounded-full font-medium transition-colors duration-200',
-                                selectedGenre === genre
-                                    ? 'bg-black text-white'
-                                    : '',
+                                selectedGenre === genre ? 'bg-black text-white' : '',
                             ]"
                         >
                             {{ genre }}
@@ -134,19 +123,15 @@ const [parent] = useAutoAnimate();
         <!-- Artists Grid -->
         <section class="py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div
-                    v-if="filteredArtists.length > 0"
-                    ref="parent"
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
+                <div v-if="filteredArtists.length > 0" ref="parent" class="flex flex-wrap justify-center gap-8">
                     <div
                         v-for="artist in filteredArtists"
                         :key="artist.id"
-                        class="group cursor-pointer"
+                        class="cursor-pointer max-w-[380px]"
                         @click="navigateToArtist(artist.id)"
                     >
                         <div
-                            class="bg-card rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2"
+                            class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2"
                         >
                             <div class="aspect-square overflow-hidden">
                                 <img
@@ -165,9 +150,7 @@ const [parent] = useAutoAnimate();
                                 <p class="text-sm mb-3">
                                     {{ artist.description }}
                                 </p>
-                                <div
-                                    class="flex items-center justify-between text-sm"
-                                >
+                                <div class="flex items-center justify-between text-sm">
                                     <span>{{ artist.experience }}</span>
                                     <span>{{ artist.location }}</span>
                                 </div>
@@ -178,12 +161,7 @@ const [parent] = useAutoAnimate();
 
                 <!-- No Results -->
                 <div v-else class="text-center py-16">
-                    <svg
-                        class="w-16 h-16 mx-auto mb-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
+                    <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path
                             stroke-linecap="round"
                             stroke-linejoin="round"

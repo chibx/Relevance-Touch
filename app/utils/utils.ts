@@ -33,3 +33,9 @@ export function populateRandom<T>(arr: T[], num = 1) {
 export function getArtistWork(id: number) {
   return artistWorks[id];
 }
+
+export function delay(del: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, del);
+  });
+}
